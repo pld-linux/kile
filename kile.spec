@@ -44,7 +44,7 @@ KDE Integrated LaTeX Environment. Features:
 
 The program's aim is to simplify the edition of LaTeX source code and
 the use of the LaTeX-related programs for users who want to retain
-control over their LaTeX documents. 
+control over their LaTeX documents.
 
 %description -l pl
 Zintegrowane ¶rodowisko LaTeXowe dla KDE. Mo¿liwo¶ci:
