@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	0eaf59b2065f8210a4708b773c70e1ee
 Patch1:		%{name}-fix-compile.patch
 URL:		http://kile.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -82,7 +83,7 @@ zachowaæ kontrolê nad dokumentami w LaTeXu.
 #%patch1 -p1
 
 %build
-
+cp -f /usr/share/automake/config.* admin
 %configure \
 	--disable-rpath \
 	--enable-final \
