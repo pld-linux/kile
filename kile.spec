@@ -6,7 +6,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://xm1.net.free.fr/kile/%{name}-%{version}.tar.gz
 Patch1:		%{name}-fix-compile.patch
-URL:		http://xm1.net.free.fr/kile/index.html
+URL:		http://xm1.net.free.fr/kile/
 BuildRequires:	kdelibs-devel >= 3.0
 Requires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -16,7 +16,35 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_htmldir        /usr/share/doc/kde/HTML
 
 %description
-KDE Integrated LaTeX Environment.
+KDE Integrated LaTeX Environment. Features:
+
+ - an editor to write your LaTeX source files (syntax highlighting,
+   undo-redo, search-replace, spellcheck ...)
+ - the principal LaTex tags can be inserted directly with the "LaTeX",
+   "Math" and "Greek" menus
+ - 370 mathematical symbols can be inserted in just one click
+ - wizards to generate code ('Quick document', 'Quick letter', tabular,
+   tabbing and array environments)
+ - LaTeX-related programs can be launched via the "Tools" menu
+ - contextual help in the "Messages / Log File" frame
+ - the standard Bibtex entry types can be inserted in the ".bib" file
+   with the "Bibliography" menu
+ - a "structure view" of the document for easier navigation of a document
+   (by clicking on an item in the "Structure" frame, you can jump directly to
+   the corresponding part of your document
+ - extensive LaTeX documentation
+ - in the "Messages / Log File" frame, you can see information about
+   processes and the logfile after a LaTeX compilation
+ - the "Next Latex Error" and "Previous Latex Error" commands let you
+   reach the LaTeX errors detected by Kile in the log file
+ - by clicking on the number of a line in the log file, the cursor jumps
+   to the corresponding line in the editor
+ - a Gnuplot front end (adaptation of the Xgfe program)
+ - support for "Inverse and Forward Search" with KDVI
+
+The program's aim is to simplify the edition of LaTeX source code and the
+use of the LaTeX-related programs for users who want to retain control over
+their LaTeX documents. 
 
 %prep
 %setup -q
