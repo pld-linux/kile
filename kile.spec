@@ -2,7 +2,7 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.6.1
-Release:	1.1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -95,7 +95,8 @@ zachowaæ kontrolê nad dokumentami w LaTeXu.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir=%{_kdedocdir}
 
 %find_lang %{name} --with-kde
 
@@ -109,5 +110,5 @@ rm -fr $RPM_BUILD_ROOT
 %{_datadir}/apps/kile
 %{_datadir}/apps/katepart/syntax/*.xml
 %{_datadir}/mimelnk/text/x-kilepr.desktop
-%{_desktopdir}/*.desktop
+%{_desktopdir}/kde/kile.desktop
 %{_iconsdir}/*/*/apps/*.png
