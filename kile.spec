@@ -6,7 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/apps/KDE3.x/office/%{name}-%{version}.tar.gz
-# Source0-md5:	b6ae2587d141ff77d7c11a4d520815a3
+# Source0-md5:	7173e0a972f038d68253e91bcd04a075
 Patch1:		%{name}-fix-compile.patch
 URL:		http://www.science.uva.nl/~wijnhout/Kite/
 BuildRequires:	kdelibs-devel >= 3.1
