@@ -2,7 +2,7 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.6.1
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -10,10 +10,9 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch1:		%{name}-fix-compile.patch
 URL:		http://kile.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir        /usr/share/doc/kde/HTML
 
 %description
 KDE Integrated LaTeX Environment. Features:
@@ -84,12 +83,10 @@ zachowaæ kontrolê nad dokumentami w LaTeXu.
 #%patch1 -p1
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-CFLAGS="%{rpmcflags}"
-CXXFLAGS="%{rpmcflags} -fno-check-new"
+
 %configure \
 	--disable-rpath \
+	--enable-final \
 	--%{!?debug:dis}%{?debug:en}able-debug
 
 %{__make}
@@ -98,7 +95,6 @@ CXXFLAGS="%{rpmcflags} -fno-check-new"
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	xdg_appsdir=%{_applnkdir}/Office/Wordprocessors \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name} --with-kde
@@ -112,6 +108,6 @@ rm -fr $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
 %{_datadir}/apps/katepart/syntax/*.xml
-%{_applnkdir}/Office/Wordprocessors/*.desktop
 %{_datadir}/mimelnk/text/x-kilepr.desktop
-%{_pixmapsdir}/*/*/apps/*.png
+%{_desktopdir}/*.desktop
+%{_iconsdir}/*/*/apps/*.png
