@@ -1,12 +1,12 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
-Version:	1.5.2
-Release:	0.1
+Version:	1.6
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/apps/KDE3.x/office/%{name}-%{version}.tar.gz
-# Source0-md5:	4a188a32d4f041fed9738b464a79e0b6
+# Source0-md5:	bff5a661174f5604b9b2d17c86e2b266
 Patch1:		%{name}-fix-compile.patch
 URL:		http://www.science.uva.nl/~wijnhout/Kite/
 BuildRequires:	kdelibs-devel >= 3.1
@@ -87,7 +87,7 @@ zachowaæ kontrolê nad dokumentami w LaTeXu.
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 CFLAGS="%{rpmcflags}"
-CXXFLAGS="%{rpmcflags} -fno-check-new -fno-rtti"
+CXXFLAGS="%{rpmcflags} -fno-check-new"
 %configure \
 	--disable-rpath \
 	--%{!?debug:dis}%{?debug:en}able-debug
@@ -98,10 +98,8 @@ CXXFLAGS="%{rpmcflags} -fno-check-new -fno-rtti"
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	appsdir=%{_applnkdir}/Office/Wordprocessors \
+	xdg_appsdir=%{_applnkdir}/Office/Wordprocessors \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv -f $RPM_BUILD_ROOT%{_pixmapsdir}{/hicolor/48x48/apps/kile.png,}
 
 %find_lang %{name} --with-kde
 
@@ -110,9 +108,9 @@ rm -fr $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README 
+%doc README 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
+%{_datadir}/apps/katepart/syntax/*.xml
 %{_applnkdir}/Office/Wordprocessors/*.desktop
-%{_pixmapsdir}/*.png
 %{_pixmapsdir}/*/*/apps/*.png
