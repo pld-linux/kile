@@ -2,7 +2,7 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.5
-Release:	1
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/apps/KDE3.x/office/%{name}-%{version}.tar.gz
