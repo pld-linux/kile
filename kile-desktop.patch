@@ -1,0 +1,9 @@
+diff -urN kile-1.6.1.orig/kile/kile/kile.desktop kile-1.6.1/kile/kile/kile.desktop
+--- kile-1.6.1.orig/kile/kile/kile.desktop	2004-01-28 21:06:38.000000000 +0100
++++ kile-1.6.1/kile/kile/kile.desktop	2004-03-09 15:55:54.000000000 +0100
+@@ -22,4 +22,4 @@
+ Name=Kile
+ Name[xx]=xxKilexx
+ MimeType=text/x-tex;text/x-kilepr
+-Categories=Qt;KDE;Office
++Categories=Qt;KDE;TextEditor;
