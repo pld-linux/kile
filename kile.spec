@@ -1,12 +1,12 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
-Version:	1.6.3
+Version:	1.7.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	971f2de0b28a7748c7dd76986bceec82
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	940fba9dc62e2687856885dffccf6e80	
 Patch0:		%{name}-desktop.patch
 URL:		http://kile.sourceforge.net/
 BuildRequires:	automake
@@ -110,7 +110,9 @@ rm -fr $RPM_BUILD_ROOT
 %doc README 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
-%{_datadir}/apps/katepart/syntax/*.xml
 %{_datadir}/mimelnk/text/x-kilepr.desktop
+%attr(755,root,root) %{_datadir}/apps/kconf_update/kile1.6_upd.pl
+%{_datadir}/apps/kconf_update/kile.upd
+%{_datadir}/config.kcfg/kile.kcfg
 %{_desktopdir}/kde/kile.desktop
 %{_iconsdir}/*/*/apps/*.png
