@@ -87,7 +87,8 @@ cp -f /usr/share/automake/config.* admin
 %configure \
 	--disable-rpath \
 	--enable-final \
-	--%{!?debug:dis}%{?debug:en}able-debug
+	--%{!?debug:dis}%{?debug:en}able-debug \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
