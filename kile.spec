@@ -1,12 +1,12 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
-Version:	1.5
+Version:	1.5.2
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/apps/KDE3.x/office/%{name}-%{version}.tar.gz
-# Source0-md5:	7173e0a972f038d68253e91bcd04a075
+# Source0-md5:	4a188a32d4f041fed9738b464a79e0b6
 Patch1:		%{name}-fix-compile.patch
 URL:		http://www.science.uva.nl/~wijnhout/Kite/
 BuildRequires:	kdelibs-devel >= 3.1
@@ -96,13 +96,12 @@ CXXFLAGS="%{rpmcflags} -fno-check-new -fno-rtti"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
 
 %{__make} install \
+	appsdir=%{_applnkdir}/Office/Wordprocessors \
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_pixmapsdir}{/hicolor/48x48/apps/kile.png,}
-mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications/*.desktop,Office/Wordprocessors}
 
 %find_lang %{name} --with-kde
 
@@ -111,7 +110,7 @@ rm -fr $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README TODO
+%doc AUTHORS README 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
 %{_applnkdir}/Office/Wordprocessors/*.desktop
