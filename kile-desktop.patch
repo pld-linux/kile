@@ -1,6 +1,5 @@
-diff -urN kile-1.6.1.orig/kile/kile.desktop kile-1.6.1/kile/kile/kile.desktop
---- kile-1.6.1.orig/kile/kile.desktop	2004-01-28 21:06:38.000000000 +0100
-+++ kile-1.6.1/kile/kile.desktop	2004-03-09 15:55:54.000000000 +0100
+--- kile-1.7.1/kile/kile.desktop.orig	2004-05-27 08:56:00.000000000 +0200
++++ kile-1.7.1/kile/kile.desktop	2004-12-08 19:54:28.481419656 +0100
 @@ -1,5 +1,6 @@
  # KDE Config File
  [KDE Desktop Entry]
@@ -8,17 +7,17 @@ diff -urN kile-1.6.1.orig/kile/kile.desktop kile-1.6.1/kile/kile/kile.desktop
  Type=Application
  Exec=kile
  Icon=kile
-@@ -13,6 +14,7 @@
- Comment[et]=(La)TeX arenduskeskkond
- Comment[fi]=(La)TeX-kehitysympäristö
- Comment[fr]=Environnement de développement pour (La)TeX
+@@ -18,6 +19,7 @@
+ Comment[hu]=(La)TeX fejlesztőkörnyezet
+ Comment[it]=Ambiente di sviluppo (La)TeX
+ Comment[nl]=(La)TeX-ontwikkelingsomgeving
 +Comment[pl]=Środowisko do tworzenia w (La)TeXu
  Comment[pt]=Ambiente de desenvolvimento de (La)TeX
  Comment[pt_BR]=Ambiente de Desenvolvimento (La)TeX
  Comment[sr]=Развојно окружење за (La)TeX
-@@ -22,4 +24,4 @@
- Name=Kile
- Name[xx]=xxKilexx
+@@ -51,4 +53,4 @@
+ GenericName[xx]=xxLaTeX Frontendxx
+ GenericName[zh_CN]=LaTeX 前端
  MimeType=text/x-tex;text/x-kilepr
 -Categories=Qt;KDE;Office
 +Categories=Qt;KDE;TextEditor;
