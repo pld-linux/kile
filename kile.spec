@@ -49,14 +49,14 @@ control over their LaTeX documents.
 %description -l pl
 Zintegrowane ¶rodowisko LaTeXowe dla KDE. Mo¿liwo¶ci:
  - edytor do pisania plików ¼ród³owych w LaTeXu (z pod¶wietlaniem
-   sk³adni, cofaniem i powtarzaniem, szukaniem i zast±powaniem,
+   sk³adni, cofaniem i powtarzaniem, szukaniem i zastêpowaniem,
    kontrol± pisowni...)
  - podstawowe znaczniki LaTeXa mog± byæ wstawiane bezpo¶rednio z menu
    "LaTeX", "Math" lub "Greek"
  - 370 symboli matematycznych mo¿e byæ wstawianych pojedynczym
    klikniêciem
  - automaty do generowania kodu ("Szybki dokument", "Szybki list",
-   drodowiska tabular, tabbing i array)
+   ¶rodowiska tabular, tabbing i array)
  - programy zwi±zane z LaTeXem mog± byæ uruchamiane z menu "Tools"
  - kontekstowa pomoc w ramce "Messages / Log File"
  - standardowe typy wpisów Bibtexa mog± byæ wstawiane do pliku .bib z
