@@ -1,7 +1,22 @@
 diff -urN kile-1.6.1.orig/kile/kile.desktop kile-1.6.1/kile/kile/kile.desktop
 --- kile-1.6.1.orig/kile/kile.desktop	2004-01-28 21:06:38.000000000 +0100
 +++ kile-1.6.1/kile/kile.desktop	2004-03-09 15:55:54.000000000 +0100
-@@ -22,4 +22,4 @@
+@@ -1,5 +1,6 @@
+ # KDE Config File
+ [KDE Desktop Entry]
++Encoding=UTF-8
+ Type=Application
+ Exec=kile
+ Icon=kile
+@@ -13,6 +14,7 @@
+ Comment[et]=(La)TeX arenduskeskkond
+ Comment[fi]=(La)TeX-kehitysympäristö
+ Comment[fr]=Environnement de développement pour (La)TeX
++Comment[pl]=Środowisko do tworzenia w (La)TeXu
+ Comment[pt]=Ambiente de desenvolvimento de (La)TeX
+ Comment[pt_BR]=Ambiente de Desenvolvimento (La)TeX
+ Comment[sr]=Развојно окружење за (La)TeX
+@@ -22,4 +24,4 @@
  Name=Kile
  Name[xx]=xxKilexx
  MimeType=text/x-tex;text/x-kilepr
