@@ -1,0 +1,237 @@
+--- kile-1.3/kile/gfe/fileFilter.cpp--	2002-11-16 14:57:06.000000000 +0100
++++ kile-1.3/kile/gfe/fileFilter.cpp	2002-11-16 14:57:30.000000000 +0100
+@@ -39,7 +39,7 @@ void fileFilter::setGnuInterface(gnuInte
+   filterEdit->setText(temp.c_str());
+ 
+   string quoteChar = gnuInt->getFileFilterQuoteChar();
+-  
++
+   if (quoteChar == "single")
+   {
+     singleQuoteRB->setChecked(TRUE);
+@@ -51,7 +51,7 @@ void fileFilter::setGnuInterface(gnuInte
+     doubleQuoteRB->setChecked(TRUE);
+     singleQuoteRB->setChecked(FALSE);
+   }
+-  
++
+ }
+ 
+ void fileFilter::insertCurrentFilename()
+@@ -65,14 +65,14 @@ void fileFilter::insertCurrentFilename()
+ 
+   newString += currentText ;
+   newString += filename;
+-  
++
+   filterEdit->setText(newString);
+ }
+ 
+ void fileFilter::insertNewFilename()
+ {
+   QString currentText = filterEdit->text();
+-  
++
+   QString filename = KFileDialog::getOpenFileName(QDir::currentDirPath(), "",this, i18n("Open File"));
+ 
+   if (!filename.isNull())
+@@ -80,7 +80,7 @@ void fileFilter::insertNewFilename()
+     QString newString;
+     newString += currentText;
+     newString += filename;
+-    
++
+     filterEdit->setText(newString);
+   }
+ }
+@@ -88,14 +88,14 @@ void fileFilter::insertNewFilename()
+ void fileFilter::setFilter()
+ {
+   string filterCmd;
+-  
++
+   if (singleQuoteRB->isChecked() == TRUE)
+     gnuInt->setFileFilterQuoteChar("single");
+   else if (doubleQuoteRB->isChecked() == TRUE)
+     gnuInt->setFileFilterQuoteChar("double");
+-  
+-  filterCmd += filterEdit->text();
+-  
++
++  filterCmd += filterEdit->text().latin1();
++
+   gnuInt->setFileFilter(filterCmd);
+ 
+   QDialog::accept();
+--- kile-1.3/kile/gfe/multiFile.cpp--	2002-11-16 14:54:34.000000000 +0100
++++ kile-1.3/kile/gfe/multiFile.cpp	2002-11-16 14:54:47.000000000 +0100
+@@ -1,6 +1,6 @@
+ /* -------------------------- multiFile class --------------------------
+ 
+-   This class handles all operations related to the storage and manipulation of 
++   This class handles all operations related to the storage and manipulation of
+    multiple files and their options from the GUI.
+ 
+    This file is part of Xgfe: X Windows GUI front end to Gnuplot
+@@ -50,9 +50,9 @@ void multiFile::setGnuInterface(gnuInter
+   gnuInt = gnu;
+ 
+   // get all current filenames
+-  
++
+   string file;
+-  
++
+   // get first filename in list
+   file = gnuInt->getMultiFileFirstFilename();
+ 
+@@ -61,7 +61,7 @@ void multiFile::setGnuInterface(gnuInter
+     multiFileList->insertItem(file.c_str());
+ 
+   int continueFlag = 1;
+-  
++
+   // now insert remaining files into list
+   while (continueFlag)
+   {
+@@ -72,13 +72,13 @@ void multiFile::setGnuInterface(gnuInter
+     else
+       multiFileList->insertItem(file.c_str());
+   }
+-  
++
+   // grab options for current file in combo box
+   if (multiFileList->count() > 0)
+   {
+     getCurrentOptions();
+   }
+-  
++
+ }
+ 
+ void multiFile::apply()
+@@ -150,7 +150,7 @@ QString filename=KFileDialog::getOpenFil
+ 
+   if ( !filename.isNull() )
+   {
+-    temp = filename;
++    temp = filename.latin1();
+ 
+     multiFileList->insertItem(filename,0);
+     gnuInt->insertMultiFileNew(temp);
+@@ -310,16 +310,16 @@ void multiFile::getCurrentOptions()
+     fileStyleList->setCurrentItem(16);
+   else if (style == "")
+     fileStyleList->setCurrentItem(0);
+-  
++
+   // set title options
+   string title = gnuInt->getMultiFileLegendTitle(filename);
+-  
++
+   // clear current title
+   legendTitleEdit->setText("");
+-  
++
+   if ((title != "default") && (title != "notitle"))
+     legendTitleEdit->setText(title.c_str());
+-  
++
+   if (title == "default")
+   {
+     legendTitleDefaultButton->setChecked(TRUE);
+@@ -355,7 +355,7 @@ void multiFile::getCurrentOptions()
+     singleQuoteRB->setChecked(TRUE);
+     doubleQuoteRB->setChecked(FALSE);
+   }
+-    
++
+   if (quoteChar == "double")
+   {
+     doubleQuoteRB->setChecked(TRUE);
+@@ -385,6 +385,6 @@ void multiFile::clearOptions()
+   rawFormatEdit->setText("");
+   interpList->setCurrentItem(0);
+   filterEdit->setText("");
+-  doubleQuoteRB->setChecked(TRUE);    
++  doubleQuoteRB->setChecked(TRUE);
+   singleQuoteRB->setChecked(FALSE);
+ }
+--- kile-1.3/kile/gfe/qplotdialog.cpp--	2002-11-16 14:50:10.000000000 +0100
++++ kile-1.3/kile/gfe/qplotdialog.cpp	2002-11-16 14:50:30.000000000 +0100
+@@ -768,7 +768,7 @@ void Qplotdialog::getOutput()
+   QString f = KFileDialog::getSaveFileName( QDir::currentDirPath(),"", this,"Output File" );
+   if (!f.isEmpty())
+   {
+-    temp = f;
++    temp = f.latin1();
+     gnuInt->setOutput(temp);
+     outputLabel->setText(f);
+   }
+--- kile-1.3/kile/gfe/qplotmaker.cpp--	2002-11-16 14:48:06.000000000 +0100
++++ kile-1.3/kile/gfe/qplotmaker.cpp	2002-11-16 14:49:43.000000000 +0100
+@@ -224,7 +224,7 @@ QString filename = KFileDialog::getOpenF
+   {
+     filenameEdit->setText(filename); // set label to filename
+     filenameCB->setChecked(TRUE);     // set filename checkbox
+-    temp = filename;
++    temp = filename.latin1();
+     gnuInt->setPlotFilename(temp);
+   }
+ 
+@@ -238,7 +238,7 @@ void Qplotmaker::save()
+ saveFile = KFileDialog::getSaveFileName(QDir::currentDirPath() ,"", this,"Save File" );
+   if (!saveFile.isEmpty())
+   {
+-    temp = saveFile;
++    temp = saveFile.latin1();
+     gnuInt->setGnuFileSave(temp);
+     gnuInt->doSave();
+   }
+@@ -252,7 +252,7 @@ void Qplotmaker::load()
+ loadFile= KFileDialog::getOpenFileName(QDir::currentDirPath(), "", this,"Open File" );
+   if (!loadFile.isEmpty())
+   {
+-    temp = loadFile;
++    temp = loadFile.latin1();
+     gnuInt->setGnuFileLoad(temp);
+     gnuInt->doLoad();
+   }
+@@ -266,7 +266,7 @@ void Qplotmaker::saveXgfe()
+ saveFile = KFileDialog::getSaveFileName(QDir::currentDirPath() ,"", this,"Save File" );
+   if (!saveFile.isEmpty())
+   {
+-    temp = saveFile;
++    temp = saveFile.latin1();
+     gnuInt->savePlotData(temp);
+   }
+ }
+@@ -280,7 +280,7 @@ loadFile = KFileDialog::getOpenFileName(
+ 
+   if (!loadFile.isEmpty())
+   {
+-    temp = loadFile;
++    temp = loadFile.latin1();
+     gnuInt->loadPlotData(temp);
+ 
+     // get options and set GUI
+--- kile-1.3/kile/gfe/rawGnu.cpp--	2002-11-16 14:46:33.000000000 +0100
++++ kile-1.3/kile/gfe/rawGnu.cpp	2002-11-16 14:46:38.000000000 +0100
+@@ -19,7 +19,7 @@
+ 
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+-    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.    
++    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+  *********************************************************************/
+ 
+@@ -52,7 +52,7 @@ void rawGnu::doCommand()
+   QString command = rawCommand->text();
+ 
+   string temp;
+-  temp = command;
++  temp = command.latin1();
+ 
+   // issue command
+   gnuInt->doRawCommand(temp);
