@@ -11,7 +11,6 @@ Patch1:		%{name}-fix-compile.patch
 URL:		http://kile.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
-Requires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
