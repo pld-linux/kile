@@ -5,9 +5,9 @@ Version:	1.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://xm1.net.free.fr/kile/%{name}-%{version}.tar.gz
+Source0:	http://perso.club-internet.fr/pascal.brachet/kile/%{name}-%{version}.tar.gz
 Patch1:		%{name}-fix-compile.patch
-URL:		http://xm1.net.free.fr/kile/
+URL:		http://perso.club-internet.fr/pascal.brachet/kile/
 BuildRequires:	kdelibs-devel >= 3.0
 Requires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
