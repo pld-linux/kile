@@ -3,9 +3,9 @@ Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.7.1
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}.tar.bz2
 # Source0-md5:	940fba9dc62e2687856885dffccf6e80	
 Patch0:		%{name}-desktop.patch
 URL:		http://kile.sourceforge.net/
@@ -107,7 +107,7 @@ rm -fr $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README 
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
 %{_datadir}/mimelnk/text/x-kilepr.desktop
