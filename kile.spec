@@ -11,6 +11,7 @@ URL:		http://kile.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
+Requires:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
