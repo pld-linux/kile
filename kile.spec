@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://perso.club-internet.fr/pascal.brachet/kile/%{name}-%{version}.tar.gz
+# Source0-md5:	9328b177e245236e7f713a6b0bc0e492
 Patch1:		%{name}-fix-compile.patch
 URL:		http://perso.club-internet.fr/pascal.brachet/kile/
 BuildRequires:	kdelibs-devel >= 3.1
