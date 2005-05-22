@@ -1,13 +1,7 @@
---- kile-1.7.1/kile/kile.desktop.orig	2004-05-27 08:56:00.000000000 +0200
-+++ kile-1.7.1/kile/kile.desktop	2004-12-08 19:54:28.481419656 +0100
-@@ -1,5 +1,6 @@
- # KDE Config File
- [KDE Desktop Entry]
-+Encoding=UTF-8
- Type=Application
- Exec=kile
- Icon=kile
-@@ -18,6 +19,7 @@
+diff -urN kile-1.8.org/src/kile/kile.desktop kile-1.8/src/kile/kile.desktop
+--- kile-1.8.org/src/kile/kile.desktop	2005-05-21 13:17:52.000000000 +0200
++++ kile-1.8/src/kile/kile.desktop	2005-05-22 17:57:35.255232720 +0200
+@@ -19,6 +19,7 @@
  Comment[hu]=(La)TeX fejlesztőkörnyezet
  Comment[it]=Ambiente di sviluppo (La)TeX
  Comment[nl]=(La)TeX-ontwikkelingsomgeving
@@ -15,9 +9,10 @@
  Comment[pt]=Ambiente de desenvolvimento de (La)TeX
  Comment[pt_BR]=Ambiente de Desenvolvimento (La)TeX
  Comment[sr]=Развојно окружење за (La)TeX
-@@ -51,4 +53,4 @@
- GenericName[xx]=xxLaTeX Frontendxx
+@@ -54,5 +55,5 @@
+ GenericName[tr]=LaTeX Arayüzü
  GenericName[zh_CN]=LaTeX 前端
  MimeType=text/x-tex;text/x-kilepr
--Categories=Qt;KDE;Office
+-Categories=Qt;KDE;Office;
 +Categories=Qt;KDE;TextEditor;
+ Encoding=UTF-8
