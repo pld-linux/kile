@@ -5,7 +5,7 @@ Version:	1.8.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/sourceforge/kile/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}.tar.bz2
 # Source0-md5:	9ac4cd9294c6aff1acca1def68923a7d
 Patch0:		%{name}-desktop.patch
 URL:		http://kile.sourceforge.net/
