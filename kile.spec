@@ -2,12 +2,11 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.9
-%define	_rc	rc1
-Release:	0.%{_rc}.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}%{_rc}.tar.bz2
-# Source0-md5:	92d09f012852e58996dd247584f6308e
+Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}.tar.bz2
+# Source0-md5:	32b660b4baccecf895d40c5ed43d2ffc
 Patch0:		%{name}-desktop.patch
 URL:		http://kile.sourceforge.net/
 BuildRequires:	automake
@@ -24,8 +23,8 @@ KDE Integrated LaTeX Environment. Features:
  - the principal LaTeX tags can be inserted directly with the "LaTeX",
    "Math" and "Greek" menus
  - 370 mathematical symbols can be inserted in just one click
- - wizards to generate code ('Quick document', 'Quick letter',
-   tabular, tabbing and array environments)
+ - wizards to generate code ('Quick document', 'Quick letter', tabular,
+   tabbing and array environments)
  - LaTeX-related programs can be launched via the "Tools" menu
  - contextual help in the "Messages / Log File" frame
  - the standard Bibtex entry types can be inserted in the ".bib" file
@@ -50,8 +49,8 @@ control over their LaTeX documents.
 %description -l pl
 Zintegrowane ¶rodowisko LaTeXowe dla KDE. Mo¿liwo¶ci:
  - edytor do pisania plików ¼ród³owych w LaTeXu (z pod¶wietlaniem
-   sk³adni, cofaniem i powtarzaniem, szukaniem i zastêpowaniem,
-   kontrol± pisowni...)
+   sk³adni, cofaniem i powtarzaniem, szukaniem i zastêpowaniem, kontrol±
+   pisowni...)
  - podstawowe znaczniki LaTeXa mog± byæ wstawiane bezpo¶rednio z menu
    "LaTeX", "Math" lub "Greek"
  - 370 symboli matematycznych mo¿e byæ wstawianych pojedynczym
@@ -69,8 +68,8 @@ Zintegrowane ¶rodowisko LaTeXowe dla KDE. Mo¿liwo¶ci:
  - w ramce "Messages / Log File" mo¿na zobaczyæ informacje o
    przetwarzaniu i plik loga po kompilacji LaTeXa
  - polecenia "Next Latex Error" i "Previous Latex Error" pozwalaj± na
-   przechodzenie do miejsc wyst±pienia b³êdów znalezionych przez Kile
-   w pliku loga
+   przechodzenie do miejsc wyst±pienia b³êdów znalezionych przez Kile w
+   pliku loga
  - po klikniêciu na numerze linii w pliku loga, kursor skacze do
    odpowiedniej linii w edytorze
  - interfejs do Gnuplota (adaptacja programu Xgfe)
@@ -81,7 +80,7 @@ u¿ywania programów zwi±zanych z LaTeXem dla u¿ytkowników, którzy chc±
 zachowaæ kontrolê nad dokumentami w LaTeXu.
 
 %prep
-%setup -q -n %{name}-%{version}%{_rc}
+%setup -q
 %patch0 -p1
 
 %build
