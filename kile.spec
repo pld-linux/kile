@@ -1,5 +1,5 @@
 Summary:	KDE Integrated LaTeX Environment
-Summary(pl):	Zintegrowane ¶rodowisko LaTeXowe dla KDE
+Summary(pl.UTF-8):   Zintegrowane Å›rodowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.9.3
 Release:	1
@@ -46,38 +46,38 @@ The program's aim is to simplify the edition of LaTeX source code and
 the use of the LaTeX-related programs for users who want to retain
 control over their LaTeX documents.
 
-%description -l pl
-Zintegrowane ¶rodowisko LaTeXowe dla KDE. Mo¿liwo¶ci:
- - edytor do pisania plików ¼ród³owych w LaTeXu (z pod¶wietlaniem
-   sk³adni, cofaniem i powtarzaniem, szukaniem i zastêpowaniem, kontrol±
+%description -l pl.UTF-8
+Zintegrowane Å›rodowisko LaTeXowe dla KDE. MoÅ¼liwoÅ›ci:
+ - edytor do pisania plikÃ³w ÅºrÃ³dÅ‚owych w LaTeXu (z podÅ›wietlaniem
+   skÅ‚adni, cofaniem i powtarzaniem, szukaniem i zastÄ™powaniem, kontrolÄ…
    pisowni...)
- - podstawowe znaczniki LaTeXa mog± byæ wstawiane bezpo¶rednio z menu
+ - podstawowe znaczniki LaTeXa mogÄ… byÄ‡ wstawiane bezpoÅ›rednio z menu
    "LaTeX", "Math" lub "Greek"
- - 370 symboli matematycznych mo¿e byæ wstawianych pojedynczym
-   klikniêciem
+ - 370 symboli matematycznych moÅ¼e byÄ‡ wstawianych pojedynczym
+   klikniÄ™ciem
  - automaty do generowania kodu ("Szybki dokument", "Szybki list",
-   ¶rodowiska tabular, tabbing i array)
- - programy zwi±zane z LaTeXem mog± byæ uruchamiane z menu "Tools"
+   Å›rodowiska tabular, tabbing i array)
+ - programy zwiÄ…zane z LaTeXem mogÄ… byÄ‡ uruchamiane z menu "Tools"
  - kontekstowa pomoc w ramce "Messages / Log File"
- - standardowe typy wpisów Bibtexa mog± byæ wstawiane do pliku .bib z
+ - standardowe typy wpisÃ³w Bibtexa mogÄ… byÄ‡ wstawiane do pliku .bib z
    menu "Bibliography"
- - "strukturalny widok" dokumentu dla ³atwiejszej nawigacji po
-   dokumencie (poprzez klikniêcie elementu w ramce "Structure", mo¿na
-   skoczyæ bezpo¶rednio do odpowiedniej czê¶ci dokumentu)
+ - "strukturalny widok" dokumentu dla Å‚atwiejszej nawigacji po
+   dokumencie (poprzez klikniÄ™cie elementu w ramce "Structure", moÅ¼na
+   skoczyÄ‡ bezpoÅ›rednio do odpowiedniej czÄ™Å›ci dokumentu)
  - obszerna dokumentacja do LaTeXa
- - w ramce "Messages / Log File" mo¿na zobaczyæ informacje o
+ - w ramce "Messages / Log File" moÅ¼na zobaczyÄ‡ informacje o
    przetwarzaniu i plik loga po kompilacji LaTeXa
- - polecenia "Next Latex Error" i "Previous Latex Error" pozwalaj± na
-   przechodzenie do miejsc wyst±pienia b³êdów znalezionych przez Kile w
+ - polecenia "Next Latex Error" i "Previous Latex Error" pozwalajÄ… na
+   przechodzenie do miejsc wystÄ…pienia bÅ‚Ä™dÃ³w znalezionych przez Kile w
    pliku loga
- - po klikniêciu na numerze linii w pliku loga, kursor skacze do
+ - po klikniÄ™ciu na numerze linii w pliku loga, kursor skacze do
    odpowiedniej linii w edytorze
  - interfejs do Gnuplota (adaptacja programu Xgfe)
- - obs³uga "Inverse and Forward Search" w KDVI.
+ - obsÅ‚uga "Inverse and Forward Search" w KDVI.
 
-Celem programu jest uproszczenie edycji kodu ¼ród³owego w LaTeXu i
-u¿ywania programów zwi±zanych z LaTeXem dla u¿ytkowników, którzy chc±
-zachowaæ kontrolê nad dokumentami w LaTeXu.
+Celem programu jest uproszczenie edycji kodu ÅºrÃ³dÅ‚owego w LaTeXu i
+uÅ¼ywania programÃ³w zwiÄ…zanych z LaTeXem dla uÅ¼ytkownikÃ³w, ktÃ³rzy chcÄ…
+zachowaÄ‡ kontrolÄ™ nad dokumentami w LaTeXu.
 
 %prep
 %setup -q
