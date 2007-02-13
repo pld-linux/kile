@@ -1,5 +1,5 @@
 Summary:	KDE Integrated LaTeX Environment
-Summary(pl.UTF-8):   Zintegrowane środowisko LaTeXowe dla KDE
+Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
 Version:	1.9.3
 Release:	1
