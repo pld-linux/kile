@@ -5,7 +5,7 @@ diff -Nur kile-1.9b2-orig/src/kile/kile.desktop kile-1.9b2/src/kile/kile.desktop
  Comment[it]=Ambiente di sviluppo (La)TeX
  Comment[nl]=(La)TeX-ontwikkelingsomgeving
  Comment[pa]=(La)TeX ਵਿਕਾਸ ਵਾਤਾਵਰਣ
-+Comment[pl]=�rodowisko do tworzenia w (La)TeXu
++Comment[pl]=Środowisko do tworzenia w (La)TeXu
  Comment[pt]=Ambiente de desenvolvimento de (La)TeX
  Comment[pt_BR]=Ambiente de Desenvolvimento (La)TeX
  Comment[sr]=Развојно окружење за (La)TeX
