@@ -87,7 +87,6 @@ zachować kontrolę nad dokumentami w LaTeXu.
 cp -f /usr/share/automake/config.* admin
 %configure \
 	--disable-rpath \
-	--enable-final \
 	--%{!?debug:dis}%{?debug:en}able-debug \
 	--with-qt-libraries=%{_libdir}
 
