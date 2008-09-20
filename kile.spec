@@ -4,7 +4,7 @@ Name:		kile
 Version:	2.0.1
 Release:	1
 License:	GPL v2
-Group:		X11/Applications
+Group:		X11/Applications/Publishing
 Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}.tar.bz2
 # Source0-md5:	1d18762b6c62fb58123b1a89bdd39fb1
 Patch0:		%{name}-desktop.patch
