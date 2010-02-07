@@ -1,15 +1,15 @@
+%define 	_version	2.1b3
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
 Version:	2.1
-%define 	_version	2.1b3
 Release:	0.beta3.1
 License:	GPL v2
 Group:		X11/Applications/Publishing
 Source0:	http://dl.sourceforge.net/kile/%{name}-%{_version}.tar.bz2
 # Source0-md5:	5de96712686e82fa17732c0d0cf0cc3f
 URL:		http://kile.sourceforge.net/
-Patch0:		kile-cmake.patch
+Patch0:		%{name}-cmake.patch
 BuildRequires:	automake
 BuildRequires:	kde4-kdelibs-devel >= 4.4.0
 BuildRequires:	rpmbuild(macros) >= 1.129
@@ -88,11 +88,11 @@ zachować kontrolę nad dokumentami w LaTeXu.
 install -d build
 cd build
 %cmake \
-        -DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-        -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-        -DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+		-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+		-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+		-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
 	-DKILE_VERSION=%{version} \
-        ../
+		../
 %{__make}
 
 %install
