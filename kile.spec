@@ -1,16 +1,17 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
-Version:	2.0.1
-Release:	1
+Version:	2.1
+%define 	_version	2.1b3
+Release:	0.beta3.1
 License:	GPL v2
 Group:		X11/Applications/Publishing
-Source0:	http://dl.sourceforge.net/kile/%{name}-%{version}.tar.bz2
-# Source0-md5:	1d18762b6c62fb58123b1a89bdd39fb1
-Patch0:		%{name}-desktop.patch
+Source0:	http://dl.sourceforge.net/kile/%{name}-%{_version}.tar.bz2
+# Source0-md5:	5de96712686e82fa17732c0d0cf0cc3f
 URL:		http://kile.sourceforge.net/
+Patch0:		kile-cmake.patch
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel >= 3.2
+BuildRequires:	kde4-kdelibs-devel >= 4.4.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -80,41 +81,41 @@ używania programów związanych z LaTeXem dla użytkowników, którzy chcą
 zachować kontrolę nad dokumentami w LaTeXu.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{_version}
 %patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.* admin
-%configure \
-	--disable-rpath \
-	--%{!?debug:dis}%{?debug:en}able-debug \
-	--with-qt-libraries=%{_libdir}
-
+install -d build
+cd build
+%cmake \
+        -DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+        -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+        -DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+	-DKILE_VERSION=%{version} \
+        ../
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
-
-%find_lang %{name} --with-kde
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/apps/katepart
 
 %clean
 rm -fr $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
 %{_datadir}/mimelnk/text/x-kilepr.desktop
-%{_datadir}/apps/kconf_update/kile.upd
-%attr(755,root,root) %{_datadir}/apps/kconf_update/kile*_upd.pl
+%{_datadir}/apps/kconf_update/*
+#%attr(755,root,root) %{_datadir}/apps/kconf_update/kile*_upd.pl
 %{_datadir}/config.kcfg/kile.kcfg
-%{_desktopdir}/kde/kile.desktop
+%{_desktopdir}/kde4/kile.desktop
 %{_iconsdir}/*/*/apps/*.png
 %{_iconsdir}/*/*/apps/*.svgz
+%{_kdedocdir}/*
+%{_datadir}/dbus-1/interfaces/net.sourceforge.kile.main.xml

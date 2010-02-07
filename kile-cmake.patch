@@ -1,0 +1,11 @@
+--- kile-2.1b3/CMakeLists.txt~	2009-06-10 01:59:28.000000000 +0200
++++ kile-2.1b3/CMakeLists.txt	2010-02-07 21:27:40.000000000 +0100
+@@ -131,7 +131,7 @@
+ 
+ ########### install files ###############
+ 
+-INSTALL( FILES x-kilepr.desktop DESTINATION share/mimelink/text )
++INSTALL( FILES x-kilepr.desktop DESTINATION share/mimelnk/text )
+ 
+ INSTALL( FILES kile.upd kile1.6_upd.pl kile1.7_upd.pl kile1.9_upd.pl
+ kile1.9-1_upd.pl kile2.0-1_upd.pl kile2.0-2_upd.pl kile2.0-3_upd.pl
