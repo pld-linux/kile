@@ -10,8 +10,14 @@ Source0:	http://dl.sourceforge.net/kile/%{name}-%{_version}.tar.bz2
 # Source0-md5:	5de96712686e82fa17732c0d0cf0cc3f
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
-BuildRequires:	automake
+BuildRequires:	QtNetwork-devel
+BuildRequires:	QtScript-devel
+BuildRequires:	QtSvg-devel
+BuildRequires:	automoc4
+BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel >= 4.4.0
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
