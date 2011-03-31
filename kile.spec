@@ -1,13 +1,13 @@
-%define 	_version	2.1b4
+%define 	_version	2.1b5
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
 Version:	2.1
-Release:	0.beta4.1
+Release:	0.beta5.1
 License:	GPL v2
 Group:		X11/Applications/Publishing
 Source0:	http://dl.sourceforge.net/kile/%{name}-%{_version}.tar.bz2
-# Source0-md5:	8585c196b7bff68c5cffb924a98b8783
+# Source0-md5:	281ca92d32424671242509e514f20c8c
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
 BuildRequires:	QtNetwork-devel
@@ -88,7 +88,7 @@ zachować kontrolę nad dokumentami w LaTeXu.
 
 %prep
 %setup -q -n %{name}-%{_version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 install -d build
@@ -116,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kile
-%{_datadir}/mimelnk/text/x-kilepr.desktop
+#%{_datadir}/mimelnk/text/x-kilepr.desktop
 %{_datadir}/apps/kconf_update/*
 #%attr(755,root,root) %{_datadir}/apps/kconf_update/kile*_upd.pl
 %{_datadir}/config.kcfg/kile.kcfg
