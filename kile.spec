@@ -3,11 +3,11 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
 Version:	2.1
-Release:	0.beta5.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Publishing
-Source0:	http://dl.sourceforge.net/kile/%{name}-%{_version}.tar.bz2
-# Source0-md5:	281ca92d32424671242509e514f20c8c
+Source0:	http://downloads.sourceforge.net/kile/%{name}-%{version}.tar.bz2
+# Source0-md5:	9f76960ee477cc95f77a31a468b66e0a
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
 BuildRequires:	QtNetwork-devel
@@ -87,31 +87,33 @@ używania programów związanych z LaTeXem dla użytkowników, którzy chcą
 zachować kontrolę nad dokumentami w LaTeXu.
 
 %prep
-%setup -q -n %{name}-%{_version}
+%setup -q
 #%patch0 -p1
 
 %build
 install -d build
 cd build
 %cmake \
-		-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-		-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-		-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
-	-DKILE_VERSION=%{version} \
-		../
+-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+-DKILE_VERSION=%{version} \
+../
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+DESTDIR=$RPM_BUILD_ROOT \
+kde_htmldir=%{_kdedocdir}
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX
 %attr(755,root,root) %{_bindir}/*
@@ -125,3 +127,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/*.svgz
 %{_kdedocdir}/*
 %{_datadir}/dbus-1/interfaces/net.sourceforge.kile.main.xml
+%{_datadir}/mime/packages/kile.xml
