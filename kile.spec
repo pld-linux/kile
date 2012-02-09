@@ -2,12 +2,12 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
-Version:	2.1
+Version:	2.1.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Publishing
 Source0:	http://downloads.sourceforge.net/kile/%{name}-%{version}.tar.bz2
-# Source0-md5:	9f76960ee477cc95f77a31a468b66e0a
+# Source0-md5:	a1c757310b4e296a67c8f676f967d5f7
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
 BuildRequires:	QtNetwork-devel
