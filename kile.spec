@@ -3,7 +3,7 @@ Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
 Version:	2.1.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Publishing
 Source0:	http://downloads.sourceforge.net/kile/%{name}-%{version}.tar.bz2
@@ -107,6 +107,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 DESTDIR=$RPM_BUILD_ROOT \
 kde_htmldir=%{_kdedocdir}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/x-test
 
 %find_lang %{name}
 
