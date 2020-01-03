@@ -2,12 +2,12 @@
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
-Version:	2.1.3
-Release:	1
+Version:	2.9.93
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Publishing
 Source0:	http://downloads.sourceforge.net/kile/%{name}-%{version}.tar.bz2
-# Source0-md5:	f3129e73eea21890c40781de80b44808
+# Source0-md5:	3fd6bef325eaba51744cc36bfde22097
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
 BuildRequires:	QtNetwork-devel
@@ -15,11 +15,11 @@ BuildRequires:	QtScript-devel
 BuildRequires:	QtSvg-devel
 BuildRequires:	automoc4
 BuildRequires:	cmake
-BuildRequires:	kde4-kdelibs-devel >= 4.4.0
+#BuildRequires:	kde4-kdelibs-devel >= 4.4.0
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
-Requires:	kde4-kate
+Requires:	ka5-kate
 Requires:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -109,9 +109,12 @@ rm -rf $RPM_BUILD_ROOT
 DESTDIR=$RPM_BUILD_ROOT \
 kde_htmldir=%{_kdedocdir}
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/x-test
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/*/44x44
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/*/150x150
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/*/310x310
 
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+#%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+
 
 %find_lang %{name}
 
@@ -120,16 +123,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX
+%doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX 
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/apps/kile
+%attr(755,root,root) %{_libdir}/libkdeinit5_kile.so
+%{_datadir}/kile
 #%{_datadir}/mimelnk/text/x-kilepr.desktop
-%{_datadir}/apps/kconf_update/*
-#%attr(755,root,root) %{_datadir}/apps/kconf_update/kile*_upd.pl
+%{_datadir}/kconf_update/*
+#%attr(755,root,root) %{_datadir}/kconf_update/kile*_upd.pl
 %{_datadir}/config.kcfg/kile.kcfg
-%{_desktopdir}/kde4/kile.desktop
+%{_desktopdir}/org.kde.kile.desktop
 %{_iconsdir}/*/*/apps/*.png
-%{_iconsdir}/*/*/apps/*.svgz
-%{_kdedocdir}/*
+%{_iconsdir}/*/*/apps/*.svg
+%{_docdir}/*
 %{_datadir}/dbus-1/interfaces/net.sourceforge.kile.main.xml
 %{_datadir}/mime/packages/kile.xml
+%{_datadir}/metainfo/org.kde.kile.appdata.xml
+/etc/xdg/kile.categories
+
