@@ -1,27 +1,29 @@
-%define		_version	2.1b5
+%define		_version	3.0b4
 Summary:	KDE Integrated LaTeX Environment
 Summary(pl.UTF-8):	Zintegrowane środowisko LaTeXowe dla KDE
 Name:		kile
-Version:	2.9.93
+Version:	2.9.94
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Publishing
-Source0:	http://downloads.sourceforge.net/kile/%{name}-%{version}.tar.bz2
-# Source0-md5:	3fd6bef325eaba51744cc36bfde22097
+Source0:	http://downloads.sourceforge.net/kile/unstable/%{name}-%{_version}/%{name}-%{version}-1.tar.bz2
+# Source0-md5:	2e3dc0703044eaa98c3ee19c3b9eb47f
 URL:		http://kile.sourceforge.net/
 Patch0:		%{name}-cmake.patch
-BuildRequires:	QtNetwork-devel
+BuildRequires:	Qt6Network-devel
+BuildRequires:	Qt6Qt5Compat-devel
 BuildRequires:	QtScript-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	automoc4
+BuildRequires:	Qt6Svg-devel
+BuildRequires:	ka6-okular-devel
+BuildRequires:	kf6-ktexteditor-devel
 BuildRequires:	cmake
-#BuildRequires:	kde4-kdelibs-devel >= 4.4.0
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt6-build
+BuildRequires:	qt6-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
-Requires:	ka5-kate
 Requires:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%global debug_package %{nil}
 
 %description
 KDE Integrated LaTeX Environment. Features:
@@ -123,20 +125,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt README.MacOSX 
+%doc AUTHORS ChangeLog README README.cwl kile-remote-control.txt 
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libkdeinit5_kile.so
 %{_datadir}/kile
-#%{_datadir}/mimelnk/text/x-kilepr.desktop
 %{_datadir}/kconf_update/*
-#%attr(755,root,root) %{_datadir}/kconf_update/kile*_upd.pl
 %{_datadir}/config.kcfg/kile.kcfg
 %{_desktopdir}/org.kde.kile.desktop
 %{_iconsdir}/*/*/apps/*.png
 %{_iconsdir}/*/*/apps/*.svg
-%{_docdir}/*
-%{_datadir}/dbus-1/interfaces/net.sourceforge.kile.main.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kile.main.xml
 %{_datadir}/mime/packages/kile.xml
 %{_datadir}/metainfo/org.kde.kile.appdata.xml
-/etc/xdg/kile.categories
-
+%{_datadir}/qlogging-categories6//kile.categories
+%{_docdir}/
